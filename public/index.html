@@ -1,0 +1,27 @@
+<html>
+	<body>
+		<div id="app">
+
+			<h2>Selecciona fecha (Barcelona - Madrid)</h2>
+			<p-calendar v-model="fecha" v-on:select="loadData" dateFormat="dd/mm/yy"></p-calendar>
+
+			<div v-show="fecha!=''">
+				<h2>Datos</h2>
+				<p-chart type="line" :data="datos" style="width: 900px; height: 400px;"/>
+			</div>
+
+			<div class='loading' v-show="loading"></div>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+		<link href="https://unpkg.com/primevue/resources/themes/nova-light/theme.css " rel="stylesheet">
+		<link href="https://unpkg.com/primevue/resources/primevue.min.css " rel="stylesheet">
+		<link href="https://unpkg.com/primeicons/primeicons.css " rel="stylesheet">
+		<script src="https://unpkg.com/primevue/components/calendar/calendar.umd.min.js"></script>
+		<script src="https://unpkg.com/primevue/components/chart/chart.umd.min.js"></script>
+
+		<link href="/main.css" rel="stylesheet" />
+		<script src="/app.js"></script>
+	</body>
+</html>
